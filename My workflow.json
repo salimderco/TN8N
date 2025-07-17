@@ -1,0 +1,89 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "flutter-test",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "6679f2ef-1608-442e-9c5d-dcbc9fe9f4b2",
+      "name": "Webhook",
+      "webhookId": "b63b3f5a-75bc-4a2b-9827-2fe57a2f1e74"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#social",
+          "mode": "name"
+        },
+        "text": "=name :{{ $json ['name']}}\ncode :{{ $json ['code']}}",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        416,
+        0
+      ],
+      "id": "159e0e69-bad2-4997-8436-404cffa5235b",
+      "name": "Send a message",
+      "webhookId": "bbb9a973-0091-492a-ad6f-d9125dce1ebd",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "cYYPIWireBDyaOl4",
+          "name": "Slack account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "name": "First item",
+          "code": 1
+        }
+      },
+      {
+        "json": {
+          "name": "Second item",
+          "code": 2
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "dd25fb70-d68c-42a7-89d3-616692cf5d72",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "05fa6a76a6bdb40e5a53b792398906c25a63e19de149279369bb208b0ed19c26"
+  },
+  "id": "REJ2VzvvZ6TTJovS",
+  "tags": []
+}
