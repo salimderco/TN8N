@@ -27,7 +27,7 @@ Receive data (name, code) from a Webhook and automatically send it as a formatte
 **Project screens**
 -------------
 
-<code> <img src="/6037339462909937274.jpg" width="190" height="380" alt="auth screen"> </code>
+<code> <img src="/screenshot/6037339462909937274.jpg" width="190" height="380" alt="auth screen"> </code>
 
 -------------
 ---
